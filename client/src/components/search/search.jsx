@@ -1,31 +1,33 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./search.css";
-
-// Function to allow user to search employees
-// handleInputChange = (event) => {
-//     // let value = event.target.value;
-//     // const name = event.target.name;
-//     console.log(value);
-//     // Set the state to input
-//     // this.setState({
-//     //     [name]: value
-//     // }, () => {
-//     //     if (this.state.search) {
-//     //         let searchedEmps = filter.searchEmployees(this.state.search, this.state.currentSearchArray);
-//     //         this.setState({
-//     //             employees: searchedEmps,
-//     //             orderBy: ""
-//     //         })
-//     //     } else {
-//     //         this.setState({
-//     //             employees: this.state.currentSearchArray,
-//     //             orderBy: ""
-//     //         })
-//     //     }
-//     // });
-// };
+import API from "../utils/API";
 
 const Search = (props) => {
+    const [searchTerm, setSearchTerm] = useState("Kittery");
+    // Starting search term is Kittery, entering what I want to load 
+    const [books, setBooks] = useState([]);
+
+    useEffect(() => {
+        loadBooks()
+    }, []);
+
+    function loadBooks() {
+        API.searchBooks(searchTerm)
+        .then(res =>
+            setBooks(res.data.items)
+            )
+            .catch(err => console.log(err));
+    };
+
+    function handleInputChange(event) {
+        const { value } = event.target;
+        setSearchTerm(value);
+        if (searchTerm) {
+            loadBooks();
+            console.log(books);
+        }
+    }
+
     return (
         <div className="search card text-class">
             <div className="row justify-content-center">
@@ -37,7 +39,7 @@ const Search = (props) => {
             </div>
 
         </div>
-    )
+    );
 }
 
 export default Search;

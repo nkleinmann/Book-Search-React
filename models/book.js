@@ -3,9 +3,9 @@ const Schema = mongoose.Schema;
 
 const bookSchema = new Schema(
   {  
-    authors: {
+    authors: [{
       type: String
-    },
+    }],
     description: {
       type: String
     },
@@ -17,7 +17,6 @@ const bookSchema = new Schema(
     },
     title: {
       type: String,
-      // trim: true,
       required: true
     }
   }

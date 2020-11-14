@@ -1,6 +1,13 @@
 import axios from "axios";
 
 export default {
+
+  // Search google books
+  // https://developers.google.com/books/docs/v1/getting_started
+  searchBooks: function(searchTerm) {
+    return axios.get(`https://www.googleapis.com/books/v1/volumes?=${searchTerm}`)
+  },
+
   // Gets all books
   getBooks: function() {
     return axios.get("/api/books");
