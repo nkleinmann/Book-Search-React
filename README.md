@@ -1,6 +1,10 @@
 # Book-Search-React
 
 Users can search, view, and save books using the Google Books API
+
+Screenshots:
+
+Deployed Application: [Book-Search-React](#)
             
 ## Table of Contents:
 1. [Installation](#installation)
@@ -25,12 +29,8 @@ Manual testing
 ## Questions:
 Email: nekleinmann@gmail.com
 
-
 GitHub: 
 [nkleinmann](https://github.com/nkleinmann)
-
-
--
 
 ## License:
   ![MIT](https://img.shields.io/badge/license-MIT-blue)
