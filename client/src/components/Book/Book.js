@@ -17,6 +17,7 @@ const Book = ({ volumeInfo }) => {
             .then(res => console.log(res))
             .catch(err => console.log(err));
         }
+        // console.log(volumeInfo);
     };
     return (
         <div className="col-12">
