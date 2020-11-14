@@ -32,7 +32,7 @@ const Book = ({ volumeInfo }) => {
                 <div>
                 <img src= {volumeInfo.imageLinks?.thumbnail || "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/100px-No_image_available.svg.png"} alt="book cover" />
                 </div>
-                <p>Link: <a href={volumeInfo.infoLink} target="_blank">{volumeInfo.title}</a> </p>
+                {/* <p>Link: <a href={volumeInfo.infoLink} target="_blank">{volumeInfo.title}</a> </p> */}
                 
             </div>
             
