@@ -48,6 +48,7 @@ const Search = (props) => {
             </div>
             <div className="pt-4">
                 <div className="row book">
+                    {/* https://stackoverflow.com/questions/6259982/how-do-you-use-the-conditional-operator-in-javascript */}
                     {books ? books.map((book) => (
                         <Book 
                         key={book.id}
