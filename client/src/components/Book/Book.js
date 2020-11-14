@@ -3,7 +3,7 @@ import API from "../../utils/API";
 
 const Book = ({ volumeInfo }) => {
     function handleBooksubmit(event) {
-        event.preventDefault();
+        // event.preventDefault();
         if (volumeInfo.title) {
             API.saveBook(
                 {
@@ -25,10 +25,10 @@ const Book = ({ volumeInfo }) => {
                 <p>Author(s): {volumeInfo.authors}</p>
                 <p>Description: {volumeInfo.description || "No description available"}</p>
                 {/* <img src={volumeInfo.imageLinks.thumbnail || "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/600px-No_image_available.svg.png"} alt="book cover"/> */}
-                <p>Link: <a href={volumeInfo.infoLink}>{volumeInfo.title}</a> </p>
+                <p>Link: <a href={volumeInfo.infoLink} target="_blank">{volumeInfo.title}</a> </p>
             </div>
             <button className="save-btn" onClick={handleBooksubmit}>Save</button>
-            <button className="view-btn"><a href={volumeInfo.infoLink}>View</a></button>
+            <button className="view-btn"><a href={volumeInfo.infoLink} target="_blank">View</a></button>
         </div>
     )
 }
