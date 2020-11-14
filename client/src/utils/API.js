@@ -5,7 +5,7 @@ export default {
   // Search google books
   // https://developers.google.com/books/docs/v1/getting_started
   searchBooks: function(searchTerm) {
-    return axios.get(`https://www.googleapis.com/books/v1/volumes?q=${searchTerm}`)
+    return axios.get(`https://www.googleapis.com/books/v1/volumes?q=${searchTerm}`);
   },
 
   // Gets all books

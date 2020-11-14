@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+// import React, { Component } from "react";
+import React from "react";
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import Header from "./components/header";
 import Search from "./components/search";

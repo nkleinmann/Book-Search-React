@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./search.css";
 import API from "../../utils/API";
+import Book from "../../utils/Book";
 
 const Search = (props) => {
     const [searchTerm, setSearchTerm] = useState("Kittery");
@@ -22,6 +23,7 @@ const Search = (props) => {
     function handleInputChange(event) {
         const { value } = event.target;
         setSearchTerm(value);
+        // console.log(searchTerm)
     }
 
     function handleFormSubmit(event) {
@@ -36,14 +38,23 @@ const Search = (props) => {
         <div className="search card text-class">
             <div className="row justify-content-center">
                 <form className="col-8">
-                    <input type="text" class="form-control m-2" id="exampleBook" aria-describedby="bookHelp" placeholder="Enter book" 
+                    <input type="text" className="form-control m-2" id="exampleBook" aria-describedby="bookHelp" placeholder="Enter book" 
                     onChange={handleInputChange}
-                    name="books searcj"
-                    placeholder="keywords"/>
-                    {/* handleInputChange={this.handleInputChange} */}
+                    name="books search"
+                    placeholder="Keywords for books"/>
                 </form>
-                <button type="submit" class="btn btn-primary col-3 m-2"
+                <button type="submit" className="btn btn-primary col-3 m-2"
                 onClick={handleFormSubmit}>Submit</button>
+            </div>
+            <div className="pt-4">
+                <div className="row book">
+                    {books ? books.map((book) => (
+                        <Book 
+                        key={book.id}
+                        volumeInfo={book.volumeInfo}
+                        />
+                    )) : null}
+                </div>
             </div>
 
         </div>
