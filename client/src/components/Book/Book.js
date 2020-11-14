@@ -10,7 +10,7 @@ const Book = ({ volumeInfo }) => {
                     title: volumeInfo,
                     authors: volumeInfo.authors,
                     description: volumeInfo.description,
-                    // image: volumeInfo.imageLinks.thumbnail,
+                    image: volumeInfo.imageLinks.thumbnail,
                     link: volumeInfo.infoLink
                 }
             )
@@ -24,7 +24,9 @@ const Book = ({ volumeInfo }) => {
                 <p>Title: {volumeInfo.title}</p>
                 <p>Author(s): {volumeInfo.authors}</p>
                 <p>Description: {volumeInfo.description || "No description available"}</p>
-                {/* <img src={volumeInfo.imageLinks.thumbnail || "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/600px-No_image_available.svg.png"} alt="book cover"/> */}
+                <div>
+                {/* <img src= {volumeInfo.imageLinks.thumbnail || "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/600px-No_image_available.svg.png"} alt="book cover" /> */}
+                </div>
                 {/* <p>Link: <a href={volumeInfo.infoLink} target="_blank">{volumeInfo.title}</a> </p> */}
             </div>
             <button className="save-btn" onClick={handleBooksubmit}>Save</button>
