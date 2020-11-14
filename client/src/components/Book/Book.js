@@ -8,7 +8,6 @@ const Book = ({ volumeInfo }) => {
             API.saveBook(
                 {
                     title: volumeInfo,
-                    subtitle: volumeInfo.subtitle,
                     authors: volumeInfo.authors,
                     description: volumeInfo.description,
                     image: volumeInfo.imageLinks.thumbnail,
@@ -28,6 +27,8 @@ const Book = ({ volumeInfo }) => {
                 {/* <img src={volumeInfo.imageLinks.thumbnail || "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/600px-No_image_available.svg.png"} alt="book cover"/> */}
                 <p>Link: <a href={volumeInfo.infoLink}>{volumeInfo.title}</a> </p>
             </div>
+            <button className="save-btn" onClick={handleBooksubmit}>Save</button>
+            <button className="view-btn"><a href={volumeInfo.infoLink}>View</a></button>
         </div>
     )
 }
