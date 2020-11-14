@@ -25,7 +25,7 @@ const Book = ({ volumeInfo }) => {
                 <p>Title: {volumeInfo.title}</p>
                 <p>Author(s): {volumeInfo.authors}</p>
                 <p>Description: {volumeInfo.description || "No description available"}</p>
-                {/* <p>Image: <img src={volumeInfo.imageLinks.thumbnail} alt="book cover" thumbnail/></p> */}
+                {/* <img src={volumeInfo.imageLinks.thumbnail || "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/600px-No_image_available.svg.png"} alt="book cover"/> */}
                 <p>Link: <a href={volumeInfo.infoLink}>{volumeInfo.title}</a> </p>
             </div>
         </div>
