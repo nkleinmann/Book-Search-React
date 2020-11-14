@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./search.css";
 import API from "../../utils/API";
-import Book from "../../utils/Book";
+import Book from "../Book/Book";
 
 const Search = (props) => {
     const [searchTerm, setSearchTerm] = useState("Kittery");
